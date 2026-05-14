@@ -10,3 +10,10 @@ line-height: 24px;
   width: 32px;
   height: 32px;
 }
+
+a {
+  &.active {
+    color: #3b82f6;
+    font-weight: bold;
+  }
+}
