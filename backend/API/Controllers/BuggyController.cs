@@ -9,7 +9,7 @@ public class BuggyController : BaseApiController
     [HttpGet("unauthorized")]
     public IActionResult GetUnauthorized()
     {
-        return Unauthorized();
+        return Unauthorized("Acesso não permitido");
     }
 
     [HttpGet("badrequest")]
@@ -21,7 +21,7 @@ public class BuggyController : BaseApiController
     [HttpGet("notfound")]
     public IActionResult GetNotFound()
     {
-        return NotFound();
+        return NotFound("Recurso não encontrado");
     }
 
     [HttpGet("internalerror")]
@@ -33,6 +33,6 @@ public class BuggyController : BaseApiController
     [HttpPost("validationerror")]
     public IActionResult GetValidationError(CreateProductDto product)
     {
-        return Ok();
+        return BadRequest("Erro de validação");
     }
 }

@@ -1,0 +1,12 @@
+<div class="container mt-5 p-4 bg-gray-100 rounded shadow-lg">
+  <h1 class="text-3xl">Internal Server Error</h1>
+  @if(error){
+    <h5 class="text-red-600 font-semibold">Error: {{ error.message }}</h5>
+    <p>Erro foi gerado no Servidor, não no Angular</p>
+    <p class="mb-2">o que fazer agora?</p>
+    <h5 class="text-lg font-semibold mb-2">Dicas:</h5>
+    <mat-card>
+      <code class="p-4 bg-white">{{error.details}}</code>
+    </mat-card>
+  }
+</div>
