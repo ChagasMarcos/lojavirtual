@@ -840,6 +840,32 @@
           }
         }
       },
+      "RESPite/3.0.2-preview": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/RESPite.dll": {}
+        },
+        "runtime": {
+          "lib/net10.0/RESPite.dll": {}
+        }
+      },
+      "StackExchange.Redis/3.0.2-preview": {
+        "type": "package",
+        "dependencies": {
+          "RESPite": "3.0.2-preview",
+          "System.IO.Hashing": "10.0.5"
+        },
+        "compile": {
+          "lib/net10.0/StackExchange.Redis.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/StackExchange.Redis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -1084,6 +1110,22 @@
           }
         }
       },
+      "System.IO.Hashing/10.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/System.IO.Hashing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/System.IO.Hashing.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
       "System.Memory.Data/8.0.1": {
         "type": "package",
         "compile": {
@@ -1153,7 +1195,8 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Core": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.6"
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.6",
+          "StackExchange.Redis": "3.0.2-preview"
         },
         "compile": {
           "bin/placeholder/Infrastructure.dll": {}
@@ -3123,6 +3166,48 @@
         "packageIcon.png"
       ]
     },
+    "RESPite/3.0.2-preview": {
+      "sha512": "SSXn74c0CF7OugUG6fvYW8LZpXz4QrP9YJz18ziGm4axegsfMwkeRoQz5tptWmVH8As4FBbdO31C9hAL8FYE1A==",
+      "type": "package",
+      "path": "respite/3.0.2-preview",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net10.0/RESPite.dll",
+        "lib/net461/RESPite.dll",
+        "lib/net472/RESPite.dll",
+        "lib/net6.0/RESPite.dll",
+        "lib/net8.0/RESPite.dll",
+        "lib/netstandard2.0/RESPite.dll",
+        "readme.md",
+        "respite.3.0.2-preview.nupkg.sha512",
+        "respite.nuspec"
+      ]
+    },
+    "StackExchange.Redis/3.0.2-preview": {
+      "sha512": "QtciwhvBFV2JDaI9sZRkhesooIEZCDYV90lHmsmoxlhSolsdh2VnFRgOTELerAym7sS0B38CHRF4czsjrqDdNw==",
+      "type": "package",
+      "path": "stackexchange.redis/3.0.2-preview",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/StackExchange.Redis.dll",
+        "lib/net10.0/StackExchange.Redis.xml",
+        "lib/net461/StackExchange.Redis.dll",
+        "lib/net461/StackExchange.Redis.xml",
+        "lib/net472/StackExchange.Redis.dll",
+        "lib/net472/StackExchange.Redis.xml",
+        "lib/net6.0/StackExchange.Redis.dll",
+        "lib/net6.0/StackExchange.Redis.xml",
+        "lib/net8.0/StackExchange.Redis.dll",
+        "lib/net8.0/StackExchange.Redis.xml",
+        "lib/netstandard2.0/StackExchange.Redis.dll",
+        "lib/netstandard2.0/StackExchange.Redis.xml",
+        "stackexchange.redis.3.0.2-preview.nupkg.sha512",
+        "stackexchange.redis.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/10.0.1": {
       "sha512": "177+JNAV5TNvy8gLCdrcWBY9n2jdkxiHQDY4vhaExeqUpKrOqDatCcm/kW3kze60GqfnZ2NobD/IKiAPOL+CEw==",
       "type": "package",
@@ -3454,6 +3539,35 @@
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
         "system.identitymodel.tokens.jwt.7.7.1.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
+      ]
+    },
+    "System.IO.Hashing/10.0.5": {
+      "sha512": "8IBJWcCT9+e4Bmevm4T7+fQEiAh133KGiz4oiVTgJckd3Q76OFdR1falgn9lpz7+C4HJvogCDJeAa2QmvbeVtg==",
+      "type": "package",
+      "path": "system.io.hashing/10.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Hashing.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.IO.Hashing.targets",
+        "lib/net10.0/System.IO.Hashing.dll",
+        "lib/net10.0/System.IO.Hashing.xml",
+        "lib/net462/System.IO.Hashing.dll",
+        "lib/net462/System.IO.Hashing.xml",
+        "lib/net8.0/System.IO.Hashing.dll",
+        "lib/net8.0/System.IO.Hashing.xml",
+        "lib/net9.0/System.IO.Hashing.dll",
+        "lib/net9.0/System.IO.Hashing.xml",
+        "lib/netstandard2.0/System.IO.Hashing.dll",
+        "lib/netstandard2.0/System.IO.Hashing.xml",
+        "system.io.hashing.10.0.5.nupkg.sha512",
+        "system.io.hashing.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Memory.Data/8.0.1": {
