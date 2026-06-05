@@ -6,22 +6,28 @@
           <img class="w-full" src="{{product.pictureUrl}}" alt="{{product.name}}" title="{{product.name}}">
         </div>
         <div>
-          <div class="max-w-xl mx-auto">
-            <h1 class="text-3xl font-semibold text-gray-900">{{product.name}}</h1>
-            <p class="text-2xl font-semibold mb-4">{{product.price | currency}}</p>
-            <button mat-flat-button class="match-input-height">
-              <mat-icon>shopping_cart</mat-icon>
-              Add to Cart
-            </button>
-            <mat-form-field appearance="outline" class="flex">
-              <mat-label>Quantity</mat-label>
-              <input matInput type="number" min="1" value="1">
-            </mat-form-field>
+          <div>
+            <h1 data-test="product-detail-name" class="text-2xl font-semibold text-gray-900">{{product.name}}</h1>
+            <p>Você tem {{quantityInCart}} no carrinho</p>
+            <div class="mt-4 items-center gap-4 flex">
+              <p class="text-3xl font-semibold text-gray-900 ">{{product.price | currency}}</p>
+            </div>
+            <div class="mt-6 gap-4 flex mb-6">
+              <button (click)="updateCart()" [disabled]="quantity === quantityInCart" 
+                mat-flat-button class="match-input-height">
+                <mat-icon>shopping_cart</mat-icon>
+                {{getButtonText()}}
+              </button>
+              <mat-form-field appearance="outline" class="flex">
+                <mat-label>Quantity</mat-label>
+                <input matInput type="number" min="0" [(ngModel)]="quantity" value="1">
+              </mat-form-field>
+            </div>
+            <mat-divider></mat-divider>
+            <p class="mt-6 text-gray-500">
+              {{product.description}}
+            </p>
           </div>
-          <mat-divider></mat-divider>
-          <p class="mt-6 text-gray-500">
-            {{product.description}}
-          </p>
         </div>
       </div>
     </div>

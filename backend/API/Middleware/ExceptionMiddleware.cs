@@ -4,26 +4,35 @@ using API.Errors;
 
 namespace API.Middleware;
 
-public class ExceptionMiddleware(IHostEnvironment env, RequestDelegate next)
+public class ExceptionMiddleware
 {
+    private readonly IHostEnvironment _env;
+    private readonly RequestDelegate _next;
+
+    public ExceptionMiddleware(IHostEnvironment env, RequestDelegate next)
+    {
+        _env = env;
+        _next = next;
+    }
+
     public async Task InvokeAsync(HttpContext context)
     {
         try
         {
-            await next(context);
+            await _next(context);
         }
         catch (Exception ex)
         {
-           await HandleExceptionAsync(context, ex, env);
+            await HandleExceptionAsync(context, ex);
         }
     }
 
-    private static Task HandleExceptionAsync(HttpContext context, Exception ex, IHostEnvironment env)
+    private Task HandleExceptionAsync(HttpContext context, Exception ex)
     {
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-        var response = env.IsDevelopment()
+        var response = _env.IsDevelopment()
             ? new ApiErrorResponse(context.Response.StatusCode, ex.Message, ex.StackTrace?.ToString())
             : new ApiErrorResponse(context.Response.StatusCode, ex.Message, "Internal Server Error");
 
@@ -31,7 +40,7 @@ public class ExceptionMiddleware(IHostEnvironment env, RequestDelegate next)
 
         var json = JsonSerializer.Serialize(response, options);
 
-       return context.Response.WriteAsync(json);
+        return context.Response.WriteAsync(json);
     }
 
 }
