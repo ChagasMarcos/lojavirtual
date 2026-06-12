@@ -1,5 +1,7 @@
+using System.Security.Claims;
 using API.DTOs;
 using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -28,6 +30,16 @@ public class BuggyController : BaseApiController
     public IActionResult GetInternalError()
     {
         throw new Exception("Erro interno do servidor");
+    }
+
+    [Authorize]
+    [HttpGet("secret")]
+    public IActionResult GetSecretError()
+    {
+        var name = User.FindFirst(ClaimTypes.Name)?.Value;
+        var id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        return Ok("Oi "+name + " com o ID: "+ id);
     }
 
     [HttpPost("validationerror")]

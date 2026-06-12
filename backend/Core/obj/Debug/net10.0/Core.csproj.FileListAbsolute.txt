@@ -10,3 +10,4 @@ C:\Projetos\lojavirtual\backend\Core\obj\Debug\net10.0\Core.dll
 C:\Projetos\lojavirtual\backend\Core\obj\Debug\net10.0\refint\Core.dll
 C:\Projetos\lojavirtual\backend\Core\obj\Debug\net10.0\Core.pdb
 C:\Projetos\lojavirtual\backend\Core\obj\Debug\net10.0\ref\Core.dll
+c:\Projetos\lojavirtual\backend\Core\obj\Debug\net10.0\Core.csproj.AssemblyReference.cache

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QWprJOPCpvU=",
+  "dgSpecHash": "hSSZ4+bvZZI=",
   "success": true,
   "projectFilePath": "C:\\Projetos\\lojavirtual\\backend\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marcos\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Marcos\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
     "C:\\Users\\Marcos\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Marcos\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\10.0.6\\microsoft.aspnetcore.identity.entityframeworkcore.10.0.6.nupkg.sha512",
     "C:\\Users\\Marcos\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.1\\microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
     "C:\\Users\\Marcos\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Marcos\\.nuget\\packages\\microsoft.bcl.cryptography\\9.0.4\\microsoft.bcl.cryptography.9.0.4.nupkg.sha512",
