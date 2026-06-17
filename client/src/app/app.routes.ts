@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { ShopComponent } from './features/shop/shop.component';
 import { ProducDetailsComponent } from './features/shop/produc-details/produc-details.component';
-import { LoginComponent } from './features/login/login.component';
-import { RegisterComponent } from './features/register/register.component';
+import { LoginComponent } from './features/account/login/login.component';
+import { RegisterComponent } from './features/account/register/register.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { TestErrorComponent } from './features/test-error/test-error.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
@@ -17,8 +17,8 @@ export const routes: Routes = [
   { path: 'shop/:id', component: ProducDetailsComponent },
   { path: 'cart', component: CartComponent},
   { path: 'checkout', component: CheckoutComponent},
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'account/login', component: LoginComponent },
+  { path: 'account/register', component: RegisterComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'test-error', component: TestErrorComponent },
   { path: 'not-found', component: NotFoundComponent },

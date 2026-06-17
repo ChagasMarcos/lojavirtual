@@ -10,7 +10,13 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Before the first run, create and trust a local certificate with `mkcert -install`, then generate the PEM files inside `client/.certs`:
+
+```powershell
+mkcert localhost 127.0.0.1 ::1
+```
+
+The Angular dev server is configured to use `client/.certs/localhost.pem` and `client/.certs/localhost-key.pem`, so open the app at `https://localhost:4200/`. The browser should show a trusted connection once the local CA is installed.
 
 ## Code scaffolding
 
