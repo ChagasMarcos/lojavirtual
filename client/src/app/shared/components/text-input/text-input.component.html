@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline" class="w-full mb-4">
+      <mat-label>{{label}}</mat-label>
+      <input matInput [formControl]="control" type="{{type}}" placeholder={{label}} />
+      @if(control.hasError('required') && label !== 'Password'){
+      <mat-error>{{label}} é obrigatório.</mat-error>
+      }
+      @if(control.hasError('email')){
+      <mat-error>E-mail inválido</mat-error>
+      }
+      @if(label==='Password'){
+      <mat-error>{{label}} é obrigatória e deve conter no mínimo 6 caracteres.</mat-error>
+      }
+</mat-form-field>
